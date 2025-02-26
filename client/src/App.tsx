@@ -23,6 +23,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router />
       <Toaster />
+      <WhatsAppButton 
+        phoneNumber="555123456789"
+        message="¡Hola! Me gustaría obtener más información sobre sus servicios."
+      />
     </QueryClientProvider>
   );
 }
