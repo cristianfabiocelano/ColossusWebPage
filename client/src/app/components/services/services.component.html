@@ -1,0 +1,75 @@
+<section class="services">
+  <div class="services-header">
+    <h2>Our Services</h2>
+    <p>We provide comprehensive technology solutions to help your business thrive in the digital age.</p>
+  </div>
+
+  <div class="services-grid" [@staggerIn]="services.length">
+    <mat-card *ngFor="let service of services" class="service-card">
+      <mat-icon class="service-icon">{{service.icon}}</mat-icon>
+      <h3>{{service.title}}</h3>
+      <p>{{service.description}}</p>
+    </mat-card>
+  </div>
+</section>
+
+<style>
+.services {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 1rem;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: hsl(var(--muted-foreground));
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: 1.5rem;
+    color: hsl(var(--primary));
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: hsl(var(--muted-foreground));
+    line-height: 1.6;
+  }
+}
+</style>

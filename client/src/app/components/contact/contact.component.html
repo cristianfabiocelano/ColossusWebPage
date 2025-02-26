@@ -1,0 +1,146 @@
+<section class="contact">
+  <div class="contact-header">
+    <h2>Get in Touch</h2>
+    <p>Ready to transform your business? Let's talk about your project.</p>
+  </div>
+
+  <div class="contact-container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Your name">
+        <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Your email">
+        <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+          Please enter a valid email
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" rows="5" placeholder="Your message"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+          Message is required
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="submitted">
+        <span *ngIf="!submitted">Send Message</span>
+        <span *ngIf="submitted">Sending...</span>
+      </button>
+
+      <div *ngIf="success" class="success-message">
+        Thank you for your message. We'll be in touch soon!
+      </div>
+    </form>
+
+    <div class="contact-info">
+      <div class="info-card">
+        <mat-icon>location_on</mat-icon>
+        <h3>Visit Us</h3>
+        <p>123 Tech Street<br>Innovation City, IC 12345</p>
+      </div>
+
+      <div class="info-card">
+        <mat-icon>email</mat-icon>
+        <h3>Email Us</h3>
+        <p>info@colossus.tech</p>
+      </div>
+
+      <div class="info-card">
+        <mat-icon>phone</mat-icon>
+        <h3>Call Us</h3>
+        <p>+1 (555) 123-4567</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 1rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: hsl(var(--muted-foreground));
+  }
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-card {
+  padding: 2rem;
+  background: hsl(var(--card));
+  border-radius: 0.5rem;
+  text-align: center;
+
+  mat-icon {
+    font-size: 2rem;
+    height: 2rem;
+    width: 2rem;
+    margin-bottom: 1rem;
+    color: hsl(var(--primary));
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: hsl(var(--muted-foreground));
+  }
+}
+
+.success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  border-radius: 0.5rem;
+  text-align: center;
+}
+</style>

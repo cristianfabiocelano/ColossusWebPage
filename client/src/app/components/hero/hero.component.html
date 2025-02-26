@@ -1,0 +1,78 @@
+<section class="hero" [@slideIn]>
+  <div class="hero-content">
+    <h1>Transforming Business Through Technology</h1>
+    <p>We create innovative solutions that power the future of business. From custom software to cloud integration, we're your partner in digital transformation.</p>
+    <div class="cta-buttons">
+      <button mat-raised-button color="primary">Get Started</button>
+      <button mat-stroked-button>Learn More</button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1516560304088-b1a005e86962" 
+         alt="Modern tech office"
+         loading="lazy">
+  </div>
+</section>
+
+<style>
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  min-height: 80vh;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.hero-content {
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    color: transparent;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 2rem;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.hero-image {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+</style>

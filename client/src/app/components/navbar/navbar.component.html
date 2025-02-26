@@ -1,0 +1,70 @@
+<mat-toolbar class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="logo">
+      <span class="logo-text">Colossus</span>
+    </a>
+
+    <nav class="nav-links">
+      <a *ngFor="let item of navItems" 
+         [href]="item.href"
+         class="nav-link">
+        {{item.label}}
+      </a>
+    </nav>
+
+    <button mat-raised-button color="primary">Get Started</button>
+  </div>
+</mat-toolbar>
+
+<style>
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo {
+  text-decoration: none;
+  color: hsl(var(--foreground));
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.nav-link {
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+
+  &:hover {
+    color: hsl(var(--primary));
+  }
+}
+</style>
