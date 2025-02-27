@@ -37,27 +37,27 @@ export default function Home() {
   const teamMembers = [
     {
       id: 1,
-      name: "Marco Ramírez",
-      role: "Director Ejecutivo",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
-      description: "Visionario estratégico con pasión por la innovación tecnológica y liderazgo transformador. Experiencia dirigiendo equipos multidisciplinarios hacia objetivos ambiciosos.",
-      skills: ["Liderazgo Estratégico", "Negociación", "Gestión de Crisis", "Innovación", "Análisis de Mercado"]
+      name: "Alejandro Laborde",
+      role: "Desarrollador Frontend",
+      image: "https://via.placeholder.com/150", // Placeholder image
+      description: "Experto en React y desarrollo de interfaces de usuario.  Pasión por la creación de experiencias digitales atractivas.",
+      skills: ["React", "JavaScript", "HTML", "CSS", "UI/UX"]
     },
     {
       id: 2,
-      name: "Laura González",
-      role: "Directora de Tecnología",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
-      description: "Experta en arquitecturas de software escalables y soluciones tecnológicas innovadoras. Combina visión técnica con habilidades de gestión de equipos de desarrollo.",
-      skills: ["Arquitectura de Software", "Cloud Computing", "Inteligencia Artificial", "DevOps", "Ciberseguridad"]
+      name: "Cristian Celano",
+      role: "Desarrollador Backend",
+      image: "https://via.placeholder.com/150", // Placeholder image
+      description: "Especialista en Node.js y bases de datos.  Enfocado en la construcción de sistemas escalables y robustos.",
+      skills: ["Node.js", "Express.js", "MongoDB", "SQL", "API REST"]
     },
     {
       id: 3,
-      name: "Carlos Mendoza",
-      role: "Director de Operaciones",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop",
-      description: "Especialista en optimización de procesos y eficiencia operativa. Enfocado en resultados con capacidad para implementar mejoras continuas en toda la organización.",
-      skills: ["Gestión de Procesos", "Lean Management", "Análisis de Datos", "Planificación Estratégica", "Coordinación de Equipos"]
+      name: "Matias Palmieri",
+      role: "Diseñador UX/UI",
+      image: "https://via.placeholder.com/150", // Placeholder image
+      description: "Experiencia en diseño centrado en el usuario.  Crea interfaces intuitivas y atractivas para mejorar la experiencia digital.",
+      skills: ["Figma", "Sketch", "Adobe XD", "UI Design", "UX Research"]
     }
   ];
 
@@ -157,7 +157,7 @@ export default function Home() {
           >
             {/* Título con logo como fondo */}
             <div className="relative">
-              <div className="absolute inset-0 flex items-center justify-center opacity-10">
+              <div className="absolute inset-0 flex items-center justify-center opacity-20">
                 <img
                   src="/attached_assets/logo.png"
                   alt="Logo background"
