@@ -414,56 +414,119 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.id}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ 
-                  scale: 1.03,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                  height: "auto"
-                }}
-                className="relative bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 flex flex-col"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
-                  />
-                </div>
-                <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-[#1E3D59]">{member.name}</h3>
-                  <p className="text-[#F15A24] mb-4">{member.role}</p>
+            {teamMembers.map((member, index) => {
+              const [isExpanded, setIsExpanded] = useState(false);
 
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    whileHover={{ opacity: 1, height: "auto" }}
-                    className="overflow-hidden"
+              return (
+                <motion.div
+                  key={member.id}
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  animate={isExpanded ? {
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                    y: -5
+                  } : {}}
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="relative bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-500 flex flex-col cursor-pointer"
+                >
+                  {/* Imagen con overlay gradual al expandir */}
+                  <motion.div 
+                    className="relative aspect-square overflow-hidden"
+                    animate={isExpanded ? { height: "200px" } : { height: "auto" }}
                   >
-                    <p className="text-gray-600 mb-4">{member.description}</p>
-                    <div className="mt-4">
-                      <p className="font-medium text-[#1E3D59] mb-2">Habilidades clave:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {member.skills.map((skill, i) => (
-                          <Badge key={i} variant="outline" className="border-[#F15A24] text-[#F15A24]">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-all duration-500"
+                    />
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-t from-[#1E3D59]/80 to-transparent"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isExpanded ? 0.7 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </motion.div>
-                </div>
-                <div className="absolute bottom-3 right-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Contenido de la tarjeta */}
+                  <div className="p-6 flex-grow relative z-10">
+                    <motion.div
+                      layout
+                      className="flex flex-col"
+                    >
+                      <motion.h3 
+                        layout="position"
+                        className={`text-xl font-bold ${isExpanded ? "text-[#F15A24]" : "text-[#1E3D59]"} transition-colors duration-300`}
+                      >
+                        {member.name}
+                      </motion.h3>
+                      <motion.p 
+                        layout="position"
+                        className="text-gray-600 font-medium"
+                      >
+                        {member.role}
+                      </motion.p>
+
+                      {/* Contenido expandible */}
+                      <motion.div
+                        layout
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ 
+                          opacity: isExpanded ? 1 : 0,
+                          height: isExpanded ? "auto" : "0px"
+                        }}
+                        transition={{ 
+                          duration: 0.5,
+                          ease: [0.04, 0.62, 0.23, 0.98]
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <motion.div 
+                          initial={{ y: 20 }}
+                          animate={{ y: isExpanded ? 0 : 20 }}
+                          transition={{ duration: 0.5, delay: 0.1 }}
+                        >
+                          <div className="w-12 h-1 bg-[#F15A24] my-4"></div>
+                          <p className="text-gray-600 mb-6 leading-relaxed">{member.description}</p>
+                          <div className="mt-4">
+                            <p className="font-medium text-[#1E3D59] mb-3">Habilidades clave:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {member.skills.map((skill, i) => (
+                                <motion.div
+                                  key={i}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: 0.2 + (i * 0.1) }}
+                                >
+                                  <Badge 
+                                    variant="outline" 
+                                    className="border-[#F15A24] text-[#F15A24] bg-[#F15A24]/5 py-1 px-3"
+                                  >
+                                    {skill}
+                                  </Badge>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    </motion.div>
+                  </div>
+
+                  {/* Indicador de expandir/colapsar */}
+                  <motion.div 
+                    className="absolute bottom-3 right-3 z-20 bg-white rounded-full p-1 shadow-md"
+                    animate={{ rotate: isExpanded ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ${isExpanded ? "text-[#F15A24]" : "text-gray-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </motion.section>
@@ -688,56 +751,10 @@ export default function Home() {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M19.7,3H4.3C3.582,3,3,3.582,3,4.3v15.4C3,20.418,3.582,21,4.3,21h15.4c0.718,0,1.3-0.582,1.3-1.3V4.3 C21,3.582,20.418,3,19.7,3z M8.339,18.338H5.667v-8.59h2.672V18.338z M7.004,8.574c-0.857,0-1.549-0.694-1.549-1.548 c0-0.855,0.691-1.548,1.549-1.548c0.854,0,1.547,0.694,1.547,1.548C8.551,7.881,7.858,8.574,7.004,8.574z M18.339,18.338h-2.669 v-4.177c0-0.996-0.017-2.278-1.387-2.278c-1.389,0-1.601,1.086-1.601,2.206v4.249h-2.667v-8.59h2.559v1.174h0.037 c0.356-0.675,1.227-1.387,2.526-1.387c2.703,0,3.203,1.779,3.203,4.092V18.338z" />
-                  </svg>
-                </a>
+                    </svg>
+                  </a>
+                </div>
               </div>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Enlaces Rápidos</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre Nosotros</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Equipo</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Servicios</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Desarrollo Web</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Aplicaciones Móviles</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Consultoría IT</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Soluciones Cloud</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Ciberseguridad</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Contacto</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="text-gray-400">Av. Principal 123, Ciudad Empresarial</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span className="text-gray-400">+54 11 1234 5678</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-gray-400">info@tuempresa.com</span>
-                </li>
-              </ul>
             </div>
           </div>
 
