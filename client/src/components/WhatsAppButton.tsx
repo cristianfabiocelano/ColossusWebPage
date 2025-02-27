@@ -20,7 +20,7 @@ export default function WhatsAppButton({
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-8 right-8 bg-green-500 text-white rounded-full p-4 shadow-xl hover:bg-green-600 hover:shadow-2xl hover:scale-105 transition-all duration-300 z-50 animate-pulse-very-slow"
+      className="fixed bottom-8 right-8 bg-green-500 text-white rounded-full p-4 shadow-xl hover:bg-green-600 hover:shadow-2xl hover:scale-105 transition-all duration-300 z-50 animate-pulse-slow"
       aria-label="Chat on WhatsApp"
     >
       <FaWhatsapp className="w-7 h-7" />
