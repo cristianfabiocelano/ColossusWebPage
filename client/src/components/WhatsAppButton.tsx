@@ -1,15 +1,20 @@
-
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from "react-icons/fa";
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
   message: string;
 }
 
-export function WhatsAppButton({ phoneNumber, message }: WhatsAppButtonProps) {
+export default function WhatsAppButton({
+  phoneNumber,
+  message,
+}: WhatsAppButtonProps) {
   const handleClick = () => {
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
+      "_blank",
+    );
   };
 
   return (
