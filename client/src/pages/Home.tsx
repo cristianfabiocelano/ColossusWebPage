@@ -159,7 +159,7 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 flex items-center justify-center opacity-20">
                 <img
-                  src="./attached_assets/logo.png"
+                  src="/logo.png"
                   alt="Logo background"
                   className="w-96 h-auto object-contain opacity-70"
                 />
@@ -727,7 +727,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <img src="./attached_assets/logo.png" alt="Logo" className="h-12 mb-4" />
+              <img src="/logo.png" alt="Logo" className="h-12 mb-4" />
               <p className="text-gray-400 mb-4">
                 Transformando negocios a través de soluciones tecnológicas innovadoras y personalizadas.
               </p>
