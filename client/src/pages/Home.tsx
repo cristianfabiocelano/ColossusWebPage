@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-  
+
   const scrollToSection = (sectionId: string) => {
     const sectionMap: Record<string, React.RefObject<HTMLDivElement>> = {
       services: servicesRef,
@@ -21,7 +20,7 @@ export default function Home() {
       team: teamRef,
       contact: contactRef,
     };
-    
+
     const ref = sectionMap[sectionId];
     if (ref && ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
@@ -439,7 +438,7 @@ export default function Home() {
                 <div className="p-6 flex-grow">
                   <h3 className="text-xl font-bold text-[#1E3D59]">{member.name}</h3>
                   <p className="text-[#F15A24] mb-4">{member.role}</p>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     whileHover={{ opacity: 1, height: "auto" }}
@@ -693,7 +692,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-bold mb-4">Enlaces Rápidos</h4>
               <ul className="space-y-2">
@@ -704,7 +703,7 @@ export default function Home() {
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-bold mb-4">Servicios</h4>
               <ul className="space-y-2">
@@ -715,7 +714,7 @@ export default function Home() {
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Ciberseguridad</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-bold mb-4">Contacto</h4>
               <ul className="space-y-2">
@@ -741,7 +740,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
             <p>&copy; {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.</p>
           </div>
