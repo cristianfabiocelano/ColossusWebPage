@@ -761,8 +761,8 @@ export default function Home() {
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
             <p>&copy; {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.</p>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }
