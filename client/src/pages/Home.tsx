@@ -39,7 +39,7 @@ export default function Home() {
       id: 1,
       name: "Alejandro Laborde",
       role: "Desarrollador Frontend",
-      image: "/images/alejandro.jpg", // Replace with actual image URL
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
       description: "Experto en React y desarrollo de interfaces de usuario.  Pasión por la creación de experiencias digitales atractivas.",
       skills: ["React", "JavaScript", "HTML", "CSS", "UI/UX"]
     },
@@ -47,7 +47,7 @@ export default function Home() {
       id: 2,
       name: "Cristian Celano",
       role: "Desarrollador Backend",
-      image: "/images/cristian.jpg", // Replace with actual image URL
+      image: "https://randomuser.me/api/portraits/men/41.jpg",
       description: "Especialista en Node.js y bases de datos.  Enfocado en la construcción de sistemas escalables y robustos.",
       skills: ["Node.js", "Express.js", "MongoDB", "SQL", "API REST"]
     },
@@ -55,7 +55,7 @@ export default function Home() {
       id: 3,
       name: "Matias Palmieri",
       role: "Diseñador UX/UI",
-      image: "/images/matias.jpg", // Replace with actual image URL
+      image: "https://randomuser.me/api/portraits/men/57.jpg",
       description: "Experiencia en diseño centrado en el usuario.  Crea interfaces intuitivas y atractivas para mejorar la experiencia digital.",
       skills: ["Figma", "Sketch", "Adobe XD", "UI Design", "UX Research"]
     }
@@ -159,9 +159,9 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 flex items-center justify-center opacity-20">
                 <img
-                  src="/attached_assets/logo.png"
+                  src="./attached_assets/logo.png"
                   alt="Logo background"
-                  className="w-96 h-auto object-contain"
+                  className="w-96 h-auto object-contain opacity-70"
                 />
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#1E3D59] relative z-10">
@@ -727,7 +727,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <img src="/attached_assets/logo.png" alt="Logo" className="h-12 mb-4" />
+              <img src="./attached_assets/logo.png" alt="Logo" className="h-12 mb-4" />
               <p className="text-gray-400 mb-4">
                 Transformando negocios a través de soluciones tecnológicas innovadoras y personalizadas.
               </p>
