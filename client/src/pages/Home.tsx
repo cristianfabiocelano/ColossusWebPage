@@ -130,24 +130,21 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-16"
-          >
-            <img
-              src="/logo+nombre.png"
-              alt="Colossus"
-              className="h-32 mx-auto mb-16"
-              style={{ objectFit: 'contain' }}
-            />
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#F15A24] to-[#1E3D59]"
+            className="relative mb-20 mt-12"
           >
-            Transformando Negocios a través de la Tecnología
-          </motion.h1>
+            <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0">
+              <img
+                src="/logo.png"
+                alt="Colossus Background"
+                className="w-96 h-96"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[#F15A24] to-[#1E3D59] relative z-10">
+              Transformando Negocios a través de la Tecnología
+            </h1>
+          </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
