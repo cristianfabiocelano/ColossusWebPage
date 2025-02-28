@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,19 +8,19 @@ import { Component } from '@angular/core';
 export class TeamComponent {
   team = [
     {
-      name: 'Alex Rodriguez',
+      name: 'Alejandro Laborde',
       role: 'Lead Developer',
-      image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952'
+      image: '/attached_assets/Alejandro_Laborde.jpg'
     },
     {
-      name: 'Sarah Chen',
+      name: 'Matias Palmieri',
       role: 'Solutions Architect',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf'
+      image: '/attached_assets/Matias_Palmieri.HEIC'
     },
     {
-      name: 'Michael Thompson',
+      name: 'Cristian Celano',
       role: 'Technical Director',
-      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf'
+      image: '/attached_assets/Cristian_Celano.HEIC'
     }
   ];
 }
