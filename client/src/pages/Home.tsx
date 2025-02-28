@@ -329,8 +329,8 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-white p-4 rounded-lg shadow-md">
-                  <div className="text-[#F15A24] font-bold text-2xl">150+</div>
-                  <div className="text-gray-600">Proyectos Completados</div>
+                  <div className="text-[#F15A24] font-bold text-2xl">+5700</div>
+                  <div className="text-gray-600">Horas de trabajo ahorrado a los clientes</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md">
                   <div className="text-[#F15A24] font-bold text-2xl">95%</div>
