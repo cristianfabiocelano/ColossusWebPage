@@ -63,43 +63,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Barra de navegación fija */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <img src="/logo.png" alt="Colossus" className="h-8" />
-            </div>
-            <div className="flex items-center space-x-6">
-              <button 
-                onClick={() => scrollToSection('services')} 
-                className="text-gray-700 hover:text-[#F15A24] transition-colors text-sm font-medium"
-              >
-                SERVICIOS
-              </button>
-              <button 
-                onClick={() => scrollToSection('team')} 
-                className="text-gray-700 hover:text-[#F15A24] transition-colors text-sm font-medium"
-              >
-                EQUIPO
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="text-gray-700 hover:text-[#F15A24] transition-colors text-sm font-medium"
-              >
-                CONTACTO
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="bg-[#F15A24] hover:bg-[#F15A24]/90 text-white px-4 py-2 rounded-md text-sm font-medium"
-              >
-                Comienza Ahora
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -238,7 +201,6 @@ export default function Home() {
       {/* Services Section */}
       <motion.section
         ref={servicesRef}
-        id="services"
         style={{ opacity: opacityServicesSection }}
         className="py-20 bg-white"
       >
@@ -346,7 +308,6 @@ export default function Home() {
       {/* About Section */}
       <motion.section
         ref={aboutRef}
-        id="about"
         style={{ opacity: opacityAboutSection }}
         className="py-20 bg-gray-50"
       >
@@ -419,7 +380,6 @@ export default function Home() {
       {/* Team Section */}
       <motion.section
         ref={teamRef}
-        id="team"
         style={{ opacity: opacityTeamSection }}
         className="py-20 bg-white"
       >
@@ -583,7 +543,6 @@ export default function Home() {
       {/* Contact Section */}
       <motion.section
         ref={contactRef}
-        id="contact"
         style={{ opacity: opacityContactSection }}
         className="py-20 bg-[#1E3D59]"
       >
