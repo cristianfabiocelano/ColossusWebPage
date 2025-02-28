@@ -63,7 +63,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Barra de navegación unificada */}
+      {/* Barra de navegación única */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -113,7 +113,6 @@ export default function Home() {
               <button 
                 className="md:hidden flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#F15A24] hover:bg-gray-100"
                 onClick={() => {
-                  // Se podría implementar un estado para mostrar/ocultar el menú móvil
                   const mobileMenu = document.getElementById('mobile-menu');
                   if (mobileMenu) {
                     mobileMenu.classList.toggle('hidden');
