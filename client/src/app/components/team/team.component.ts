@@ -15,12 +15,12 @@ export class TeamComponent {
     {
       name: 'Matias Palmieri',
       role: 'Solutions Architect',
-      image: '/attached_assets/Matias_Palmieri.HEIC'
+      image: '/attached_assets/Matias_Palmieri.jpg'
     },
     {
       name: 'Cristian Celano',
       role: 'Technical Director',
-      image: '/attached_assets/Cristian_Celano.HEIC'
+      image: '/attached_assets/Cristian_Celano.jpg'
     }
   ];
 }

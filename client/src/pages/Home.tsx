@@ -47,7 +47,7 @@ export default function Home() {
       id: 2,
       name: "Cristian Celano",
       role: "Desarrollador Backend",
-      image: "/attached_assets/Cristian_Celano_new.jpg",
+      image: "/attached_assets/Cristian_Celano.jpg",
       description: "Especialista en Node.js y bases de datos.  Enfocado en la construcción de sistemas escalables y robustos.",
       skills: ["Node.js", "Express.js", "MongoDB", "SQL", "API REST"]
     },
@@ -55,7 +55,7 @@ export default function Home() {
       id: 3,
       name: "Matias Palmieri",
       role: "Diseñador UX/UI",
-      image: "/attached_assets/Matias_Palmieri.HEIC",
+      image: "/attached_assets/Matias_Palmieri.jpg",
       description: "Experiencia en diseño centrado en el usuario.  Crea interfaces intuitivas y atractivas para mejorar la experiencia digital.",
       skills: ["Figma", "Sketch", "Adobe XD", "UI Design", "UX Research"]
     }
