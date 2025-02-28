@@ -11,9 +11,12 @@ export default function Navbar() {
     >
       <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
         <motion.div
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 cursor-pointer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
         >
           <img 
             src="/logo.png" 
