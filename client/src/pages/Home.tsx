@@ -369,7 +369,6 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium text-[#1E3D59]">Comprometidos con la calidad</p>
-                    <p className="text-sm text-gray-500">ISO 9001 Certificados</p>
                   </div>
                 </div>
               </div>
