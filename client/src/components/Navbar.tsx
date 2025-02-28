@@ -32,18 +32,30 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <a 
             href="#services" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="text-foreground/80 hover:text-[#F15A24] transition-colors text-sm uppercase tracking-wide font-medium"
           >
             Servicios
           </a>
           <a 
             href="#team" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="text-foreground/80 hover:text-[#F15A24] transition-colors text-sm uppercase tracking-wide font-medium"
           >
             Equipo
           </a>
           <a 
             href="#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="text-foreground/80 hover:text-[#F15A24] transition-colors text-sm uppercase tracking-wide font-medium"
           >
             Contacto
