@@ -39,7 +39,7 @@ export default function Home() {
       id: 1,
       name: "Alejandro Laborde",
       role: "Desarrollador Frontend",
-      image: "./attached_assets/Alejandro_Laborde.jpg",
+      image: "/attached_assets/Alejandro_Laborde.jpg",
       description: "Experto en React y desarrollo de interfaces de usuario.  Pasión por la creación de experiencias digitales atractivas.",
       skills: ["React", "JavaScript", "HTML", "CSS", "UI/UX"]
     },
@@ -55,7 +55,7 @@ export default function Home() {
       id: 3,
       name: "Matias Palmieri",
       role: "Diseñador UX/UI",
-      image: "./attached_assets/Matias_Palmieri.HEIC",
+      image: "/attached_assets/Matias_Palmieri.HEIC",
       description: "Experiencia en diseño centrado en el usuario.  Crea interfaces intuitivas y atractivas para mejorar la experiencia digital.",
       skills: ["Figma", "Sketch", "Adobe XD", "UI Design", "UX Research"]
     }
