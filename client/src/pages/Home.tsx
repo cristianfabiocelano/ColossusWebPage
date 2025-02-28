@@ -47,7 +47,7 @@ export default function Home() {
       id: 2,
       name: "Cristian Celano",
       role: "Desarrollador Backend",
-      image: "/attached_assets/Cristian_Celano.HEIC",
+      image: "/attached_assets/Cristian_Celano_new.jpg",
       description: "Especialista en Node.js y bases de datos.  Enfocado en la construcción de sistemas escalables y robustos.",
       skills: ["Node.js", "Express.js", "MongoDB", "SQL", "API REST"]
     },
