@@ -46,10 +46,10 @@ export default function Home() {
     {
       id: 2,
       name: "Cristian Celano",
-      role: "Desarrollador Backend",
+      role: "Co-Founder y Proyect Management Professional (PMP)",
       image: "/attached_assets/Cristian_Celano.jpg",
-      description: "Especialista en Node.js y bases de datos.  Enfocado en la construcción de sistemas escalables y robustos.",
-      skills: ["Node.js", "Express.js", "MongoDB", "SQL", "API REST"]
+      description: "Profesional con una vasta trayectoria en análisis y automatización de negocios, especializado en escalabilidad de negocios a través de la tecnología.",
+      skills: ["RPA", "Análisis", "Python", "Automatizaciones", "Empatía"]
     },
     {
       id: 3,
