@@ -441,6 +441,16 @@ export default function Home() {
                       alt={member.name}
                       className="w-full h-full object-cover transition-all duration-500"
                     />
+                    {/* Quote bubble that appears on hover */}
+                    <div className="absolute opacity-0 group-hover:opacity-100 bottom-6 right-6 max-w-[85%] bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg transform transition-all duration-300 scale-95 group-hover:scale-100 origin-bottom-right z-20">
+                      {/* Pequeña flecha para el globo de diálogo */}
+                      <div className="absolute -bottom-2 right-5 w-4 h-4 bg-white/90 backdrop-blur-sm rotate-45"></div>
+                      <p className="text-sm font-medium text-[#1E3D59] italic relative z-10">
+                        {member.id === 1 && '"Puedo solucionar cualquier problema"'}
+                        {member.id === 2 && '"Encontraremos la manera de cumplir tu sueño"'}
+                        {member.id === 3 && '"Sé una forma innovadora de hacerlo"'}
+                      </p>
+                    </div>
                     <motion.div 
                       className="absolute inset-0 bg-gradient-to-t from-[#1E3D59]/80 to-transparent"
                       initial={{ opacity: 0 }}
