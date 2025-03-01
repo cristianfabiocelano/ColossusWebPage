@@ -625,15 +625,15 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="flex flex-col items-center">
             <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-lg shadow-xl"
+              className="bg-white p-8 rounded-lg shadow-xl max-w-3xl w-full mb-12"
             >
-              <h3 className="text-2xl font-bold text-[#1E3D59] mb-6">Envíanos un mensaje</h3>
+              <h3 className="text-2xl font-bold text-[#1E3D59] mb-6 text-center">Envíanos un mensaje</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -687,33 +687,35 @@ export default function Home() {
                 </div>
                 <input type="hidden" name="to_email" value="somoscolossus@gmail.com" />
                 {formStatus === 'sending' && (
-                  <p className="text-blue-600">Enviando mensaje...</p>
+                  <p className="text-blue-600 text-center">Enviando mensaje...</p>
                 )}
                 {formStatus === 'sent' && (
-                  <p className="text-green-600">¡Mensaje enviado con éxito!</p>
+                  <p className="text-green-600 text-center">¡Mensaje enviado con éxito!</p>
                 )}
                 {formStatus === 'error' && (
-                  <p className="text-red-600">Error al enviar el mensaje. Intenta nuevamente.</p>
+                  <p className="text-red-600 text-center">Error al enviar el mensaje. Intenta nuevamente.</p>
                 )}
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-[#F15A24] text-white rounded-md hover:bg-[#F15A24]/90 transition-colors duration-300 w-full md:w-auto"
-                  disabled={formStatus === 'sending'}
-                >
-                  {formStatus === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
-                </button>
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-[#F15A24] text-white rounded-md hover:bg-[#F15A24]/90 transition-colors duration-300 w-full md:w-auto"
+                    disabled={formStatus === 'sending'}
+                  >
+                    {formStatus === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
+                  </button>
+                </div>
               </form>
             </motion.div>
 
             <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-white"
+              className="text-white bg-[#1E3D59]/40 p-8 rounded-lg max-w-3xl w-full"
             >
-              <h3 className="text-2xl font-bold mb-6">Información de Contacto</h3>
-              <div className="space-y-6">
+              <h3 className="text-2xl font-bold mb-6 text-center">Información de Contacto</h3>
+              <div className="flex flex-col md:flex-row justify-center gap-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#F15A24]/20 p-3 rounded-full mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#F15A24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -737,7 +739,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-
             </motion.div>
           </div>
         </div>
