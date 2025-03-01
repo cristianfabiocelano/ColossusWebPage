@@ -177,8 +177,9 @@ export default function Home() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex justify-center mt-12"
+            className="flex flex-col items-center justify-center mt-20"
           >
+            <p className="text-[#F15A24] font-medium text-xl mb-2">Conocenos</p>
             <motion.div
               className="cursor-pointer"
               onClick={() => scrollToSection('services')}
