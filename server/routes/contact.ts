@@ -17,7 +17,7 @@ router.post('/api/contact', async (req, res) => {
 
     // Usar un remitente verificado por defecto
     const emailData = {
-      to: 'contacto@colossus.com', // Cambiar al email donde quieres recibir los mensajes
+      to: 'somoscolosus@gmail.com', // Email donde se reciben los mensajes de contacto
       from: 'noreply@example.com', // Cambiar a un dominio verificado en SendGrid
       subject: `Nuevo mensaje de contacto de ${name}`,
       text: `
