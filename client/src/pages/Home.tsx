@@ -18,6 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     emailjs.init("_BRwWLGOEZOLKqTFP"); // Public key (no requiere secretos)
+    console.log("EmailJS inicializado");
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -70,8 +71,13 @@ export default function Home() {
     e.preventDefault();
     setFormStatus('sending');
 
-    emailjs.sendForm('default_service', 'template_y0sez2n', e.target)
-      .then(() => {
+    // Para propósitos de depuración - muestra los valores del formulario
+    const formData = new FormData(e.target);
+    console.log("Datos del formulario:", Object.fromEntries(formData.entries()));
+
+    emailjs.sendForm('service_id', 'template_id', e.target, '_BRwWLGOEZOLKqTFP')
+      .then((result) => {
+        console.log('Email enviado con éxito:', result.text);
         setFormStatus('sent');
         e.target.reset();
         setTimeout(() => setFormStatus('idle'), 5000);
