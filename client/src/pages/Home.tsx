@@ -77,11 +77,17 @@ export default function Home() {
     const formValues = Object.fromEntries(formData.entries());
     console.log("Datos del formulario:", formValues);
     
-    // Asegúrate de que el correo de destino esté incluido
+    // Construir explícitamente los parámetros que necesita la plantilla
     const templateParams = {
-      ...formValues,
+      from_name: formValues.name,
+      from_email: formValues.email,
+      subject: formValues.subject,
+      message: formValues.message,
       to_email: 'somoscolossus@gmail.com' // Asegura que este email esté incluido en la plantilla
     };
+    
+    // Para debugging
+    console.log("Datos del formulario enviados a EmailJS:", templateParams);
 
     // Enviar email con EmailJS
     emailjs.send('service_pe7jnrr', 'template_59hssfx', templateParams, 'KudlS38jPyllzbrvQ')
