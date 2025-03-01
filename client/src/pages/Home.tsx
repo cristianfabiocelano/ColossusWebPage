@@ -378,14 +378,14 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#1E3D59] mb-4">Sobre Nosotros</h2>
               <div className="h-1 w-20 bg-[#F15A24] mb-6"></div>
               <p className="text-gray-600 mb-6">
-                Somos un equipo de profesionales apasionados por la tecnología y comprometidos con el éxito de nuestros clientes. Desde nuestra fundación, hemos trabajado con empresas de diversos sectores, ayudándoles a alcanzar sus objetivos mediante soluciones tecnológicas innovadoras.
+                Somos un equipo de profesionales apasionados por la tecnología y comprometidos con el éxito de nuestros clientes. Desde nuestra consultora, hemos trabajado con empresas de diversos sectores, ayudándoles a alcanzar sus objetivos mediante soluciones tecnológicas innovadoras.
               </p>
               <p className="text-gray-600 mb-6">
                 Nuestro enfoque se centra en comprender a fondo las necesidades específicas de cada negocio para ofrecer soluciones personalizadas que generen un impacto real y duradero.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-white p-4 rounded-lg shadow-md">
-                  <div className="text-[#F15A24] font-bold text-2xl">+5700</div>
+                  <div className="text-[#F15A24] font-bold text-2xl">5700+</div>
                   <div className="text-gray-600">Horas de trabajo ahorrado a los clientes</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md">
