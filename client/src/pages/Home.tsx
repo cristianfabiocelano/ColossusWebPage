@@ -18,9 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     // Inicializa EmailJS con tu public key
-    emailjs.init({
-      publicKey: "_BRwWLGOEZOLKqTFP",
-    });
+    emailjs.init("KudlS38jPyllzbrvQ");
     console.log("EmailJS inicializado correctamente");
   }, []);
 
@@ -86,7 +84,7 @@ export default function Home() {
     };
 
     // Enviar email con EmailJS
-    emailjs.send('service_pe7jnrr', 'template_59hssfx', templateParams)
+    emailjs.send('service_pe7jnrr', 'template_59hssfx', templateParams, 'KudlS38jPyllzbrvQ')
       .then((result) => {
         console.log('Email enviado con éxito:', result.text);
         setFormStatus('sent');
