@@ -75,7 +75,7 @@ export default function Home() {
     const formData = new FormData(e.target);
     console.log("Datos del formulario:", Object.fromEntries(formData.entries()));
 
-    emailjs.sendForm('service_id', 'template_id', e.target, '_BRwWLGOEZOLKqTFP')
+    emailjs.sendForm('service_pe7jnrr', 'template_59hssfx', e.target, '_BRwWLGOEZOLKqTFP')
       .then((result) => {
         console.log('Email enviado con éxito:', result.text);
         setFormStatus('sent');
