@@ -177,23 +177,35 @@ export default function Home() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex gap-4 justify-center"
+            className="flex justify-center mt-12"
           >
-            <Button
-              size="lg"
-              className="bg-[#F15A24] hover:bg-[#F15A24]/90"
-              onClick={() => scrollToSection('contact')}
-            >
-              Comienza Ahora
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-[#F15A24] text-[#F15A24] hover:bg-[#F15A24]/10"
+            <motion.div
+              className="cursor-pointer"
               onClick={() => scrollToSection('services')}
+              animate={{
+                y: [0, 10, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut"
+              }}
             >
-              Conoce Más
-            </Button>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="48" 
+                height="48" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#F15A24" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
