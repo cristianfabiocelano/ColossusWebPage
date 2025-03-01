@@ -17,8 +17,11 @@ export default function Home() {
   const [formStatus, setFormStatus] = useState('idle'); // idle, sending, sent, error
 
   useEffect(() => {
-    emailjs.init("_BRwWLGOEZOLKqTFP"); // Public key (no requiere secretos)
-    console.log("EmailJS inicializado");
+    // Inicializa EmailJS con tu public key
+    emailjs.init({
+      publicKey: "_BRwWLGOEZOLKqTFP",
+    });
+    console.log("EmailJS inicializado correctamente");
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -73,18 +76,35 @@ export default function Home() {
 
     // Para propósitos de depuración - muestra los valores del formulario
     const formData = new FormData(e.target);
-    console.log("Datos del formulario:", Object.fromEntries(formData.entries()));
+    const formValues = Object.fromEntries(formData.entries());
+    console.log("Datos del formulario:", formValues);
+    
+    // Asegúrate de que el correo de destino esté incluido
+    const templateParams = {
+      ...formValues,
+      to_email: 'somoscolossus@gmail.com' // Asegura que este email esté incluido en la plantilla
+    };
 
-    emailjs.sendForm('service_pe7jnrr', 'template_59hssfx', e.target, '_BRwWLGOEZOLKqTFP')
+    // Enviar email con EmailJS
+    emailjs.send('service_pe7jnrr', 'template_59hssfx', templateParams)
       .then((result) => {
         console.log('Email enviado con éxito:', result.text);
         setFormStatus('sent');
         e.target.reset();
+        toast({
+          title: "Mensaje enviado",
+          description: "Hemos recibido tu mensaje. Te responderemos a la brevedad.",
+        });
         setTimeout(() => setFormStatus('idle'), 5000);
       })
       .catch((error) => {
         console.error('Error al enviar email:', error);
         setFormStatus('error');
+        toast({
+          variant: "destructive",
+          title: "Error al enviar",
+          description: "No pudimos enviar tu mensaje. Por favor intenta nuevamente.",
+        });
         setTimeout(() => setFormStatus('idle'), 5000);
       });
   };
