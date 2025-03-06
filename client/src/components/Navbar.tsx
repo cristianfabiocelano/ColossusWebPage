@@ -7,7 +7,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b shadow-sm h-20"
     >
       <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
         <motion.div
