@@ -45,15 +45,15 @@ export default function Home() {
     {
       id: 1,
       name: "Alejandro Laborde",
-      role: "Desarrollador Frontend",
+      role: "Co-funder & Bussiness Process integration",
       image: "/attached_assets/Alejandro_Laborde.jpg",
-      description: "Experto en React y desarrollo de interfaces de usuario.  Pasión por la creación de experiencias digitales atractivas.",
-      skills: ["React", "JavaScript", "HTML", "CSS", "UI/UX"]
+      description: "Profesional en automatización de procesos empresariales e integraciones. Pasión por la creación e implementación de soluciones",
+      skills: ["Java", "BPM", "IA", "Resolutivo", "Analisis"]
     },
     {
       id: 2,
       name: "Cristian Celano",
-      role: "Co-Founder y Proyect Management Professional (PMP)",
+      role: "Co-Founder & Proyect Management Professional (PMP)",
       image: "/attached_assets/Cristian_Celano.jpg",
       description: "Profesional con una vasta trayectoria en análisis y automatización de negocios, especializado en escalabilidad de negocios a través de la tecnología.",
       skills: ["RPA", "Análisis", "Python", "Automatizaciones", "Empatía"]
@@ -500,7 +500,7 @@ export default function Home() {
                     <div className="absolute opacity-0 group-hover:opacity-100 bottom-6 right-6 max-w-[85%] bg-white/95 p-4 rounded-lg shadow-xl transform transition-all duration-300 scale-95 group-hover:scale-100 origin-bottom-right z-20 border-l-4 border-[#F15A24]">
                       <div className="absolute -bottom-2 right-5 w-4 h-4 bg-white rotate-45 shadow-lg"></div>
                       <p className="text-sm md:text-base font-medium text-[#1E3D59] italic relative z-10">
-                        {member.id === 1 && '"Puedo solucionar cualquier problema"'}
+                        {member.id === 1 && '"Si automatizas tu negocio, estas regalando tiempo"'}
                         {member.id === 2 && '"Encontraremos la manera de cumplir tu sueño"'}
                         {member.id === 3 && '"Sé una forma innovadora de hacerlo"'}
                       </p>
