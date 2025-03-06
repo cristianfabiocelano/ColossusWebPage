@@ -26,7 +26,7 @@ function App() {
       <Router />
       <Toaster />
       <WhatsAppButton
-        phoneNumber="555123456789"
+        phoneNumber="5491158232588"
         message="¡Hola! Me gustaría obtener más información sobre sus servicios."
       />
     </QueryClientProvider>
