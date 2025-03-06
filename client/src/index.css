@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes pulseArrow {
+  0% {
+    transform: translateX(0) rotate(45deg);
+  }
+  50% {
+    transform: translateX(3px) rotate(45deg);
+  }
+  100% {
+    transform: translateX(0) rotate(45deg);
+  }
+}
+
+.arrow-animation .border-r-2 {
+  animation: pulseArrow 1.5s infinite;
+}
+
 @layer base {
   * {
     @apply border-border;
