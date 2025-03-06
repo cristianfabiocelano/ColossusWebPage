@@ -717,6 +717,17 @@ export default function Home() {
               className="text-white bg-[#1E3D59]/40 p-8 rounded-lg max-w-3xl w-full"
             >
               <h3 className="text-2xl font-bold mb-6 text-center">Información de Contacto</h3>
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
+                <div className="bg-white/90 text-[#1E3D59] p-3 rounded-lg shadow-lg">
+                  <p className="text-sm font-medium">También podés escribirnos a WhatsApp</p>
+                </div>
+                <div className="arrow-to-whatsapp flex justify-end">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100" className="transform translate-x-4">
+                    <path d="M0,10 Q60,10 90,50 T120,90" fill="none" stroke="white" strokeWidth="2" />
+                    <polygon points="117,85 120,90 115,93" fill="white" />
+                  </svg>
+                </div>
+              </div>
               <div className="flex flex-col md:flex-row justify-center gap-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#F15A24]/20 p-3 rounded-full mt-1">
