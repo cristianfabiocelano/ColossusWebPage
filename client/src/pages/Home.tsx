@@ -500,7 +500,7 @@ export default function Home() {
                     <div className="absolute opacity-0 group-hover:opacity-100 bottom-6 right-6 max-w-[85%] bg-white/95 p-4 rounded-lg shadow-xl transform transition-all duration-300 scale-95 group-hover:scale-100 origin-bottom-right z-20 border-l-4 border-[#F15A24]">
                       <div className="absolute -bottom-2 right-5 w-4 h-4 bg-white rotate-45 shadow-lg"></div>
                       <p className="text-sm md:text-base font-medium text-[#1E3D59] italic relative z-10">
-                        {member.id === 1 && '"Si automatizas tu negocio, estas regalando tiempo"'}
+                        {member.id === 1 && '"Si no automatizas tu negocio, estas perdiendo tiempo"'}
                         {member.id === 2 && '"Encontraremos la manera de cumplir tu sueño"'}
                         {member.id === 3 && '"Sé una forma innovadora de hacerlo"'}
                       </p>
