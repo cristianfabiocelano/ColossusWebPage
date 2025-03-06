@@ -27,7 +27,7 @@ function App() {
       <Toaster />
       <WhatsAppButton
         phoneNumber="5491158232588"
-        message="¡Hola! Me gustaría obtener más información sobre sus servicios."
+        message="Hola! vi la pagina web de colossus y tengo una consulta para hacerte"
       />
     </QueryClientProvider>
   );
