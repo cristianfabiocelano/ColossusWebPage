@@ -115,6 +115,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      {/* Espacio vacío para compensar el navbar */}
+      <div className="h-20"></div>
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
