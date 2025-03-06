@@ -714,18 +714,9 @@ export default function Home() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-white bg-[#1E3D59]/40 p-8 rounded-lg max-w-3xl w-full relative"
+              className="text-white bg-[#1E3D59]/40 p-8 rounded-lg max-w-3xl w-full"
             >
               <h3 className="text-2xl font-bold mb-6 text-center">Información de Contacto</h3>
-              <div className="absolute -right-64 bottom-12 hidden xl:flex items-center">
-                <div className="bg-white/90 text-[#1E3D59] p-3 rounded-lg shadow-lg">
-                  <p className="text-sm font-medium">También podés escribirnos a WhatsApp</p>
-                </div>
-                <div className="relative w-24 h-10">
-                  <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white"></div>
-                  <div className="absolute top-1/2 right-0 w-3 h-3 border-t-2 border-r-2 border-white transform rotate-45 -translate-y-1/2 animate-pulse"></div>
-                </div>
-              </div>
               <div className="flex flex-col md:flex-row justify-center gap-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#F15A24]/20 p-3 rounded-full mt-1">

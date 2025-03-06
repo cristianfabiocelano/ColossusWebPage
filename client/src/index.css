@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes pulse {
-  0% {
-    transform: translateX(0) rotate(45deg);
-  }
-  50% {
-    transform: translateX(5px) rotate(45deg);
-  }
-  100% {
-    transform: translateX(0) rotate(45deg);
-  }
-}
-
-.animate-pulse {
-  animation: pulse 1.5s infinite;
-}
-
 @layer base {
   * {
     @apply border-border;
