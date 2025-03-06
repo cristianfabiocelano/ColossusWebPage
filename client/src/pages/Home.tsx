@@ -636,16 +636,6 @@ export default function Home() {
               className="bg-white p-8 rounded-lg shadow-xl max-w-3xl w-full mb-12"
             >
               <h3 className="text-2xl font-bold text-[#1E3D59] mb-6 text-center">Envíanos un mensaje</h3>
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-[#1E3D59] text-center">Envíanos un mensaje</h3>
-                <div className="flex items-center relative">
-                  <p className="text-sm font-medium text-gray-700">También podés escribirnos a WhatsApp</p>
-                  <div className="arrow-animation w-16 h-10 relative ml-2">
-                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-green-500 transform -translate-y-1/2"></div>
-                    <div className="absolute top-1/2 right-0 w-3 h-3 border-t-2 border-r-2 border-green-500 transform rotate-45 -translate-y-1/2"></div>
-                  </div>
-                </div>
-              </div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
